@@ -29,27 +29,23 @@ void inorder(struct node *root)
 
 struct node* insert(struct node* node, int key)
 {
-    /* If the tree is empty, return a new node */
+/
     if (node == NULL) return newNode(key);
     
-    /* Otherwise, recur down the tree */
+
     if (key < node->key)
         node->left = insert(node->left, key);
     else
         node->right = insert(node->right, key);
     
-    /* return the (unchanged) node pointer */
     return node;
 }
 
-/* Given a non-empty binary search tree, return the node with minimum
- key value found in that tree. Note that the entire tree does not
- need to be searched. */
 struct node * minValueNode(struct node* node)
 {
     struct node* current = node;
     
-    /* loop down to find the leftmost leaf */
+  
     while (current && current->left != NULL)
         current = current->left;
     
@@ -110,3 +106,4 @@ int main()
     
     return 0;
 }
+//Inspired by geeks for geeks
